@@ -1,9 +1,10 @@
+import Apikey from "./config.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   const date = document.getElementById("span-date");
   const spandate = new Date().getFullYear();
   date.textContent = spandate;
 
-  const Apikey = "73ab688e46690467f6afc31aa96a129b";
   const Apiurl =
     "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (data.weather[0].main == "Mist") {
         weatherIcon.src = "/images/mist.png";
       }
+
       document.querySelector(".weather").style.display = "block";
       document.querySelector(".error").style.display = "none";
     }
